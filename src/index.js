@@ -1,20 +1,9 @@
-const express = require('express');
-const dotenv  =  require('dotenv');
-const app = express();
+const app = require("./app");
 
-const quoteRoutes = require('./src/routes/quote.routes.js')
-
-app.use(express.json());
-dotenv.config();
-
+// Define el puerto a utilizar desde las variables de entorno o por defecto 3001
 const PORT = process.env.PORT || 3001;
 
-app.use("/api/quote", quoteRoutes);
-
-
-
-
+// Inicia el servidor en el puerto especificado
 app.listen(PORT, () => {
-    console.log('Servidor Activo');
-})
-
+  console.log(`Servidor Activo en el puerto ${PORT}`);
+});
