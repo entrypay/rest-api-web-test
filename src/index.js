@@ -1,9 +1,25 @@
-const app = require("./app");
+import app from "./app.js";
+import { sequelize } from "./database/database.js";
+import './models/Clients.js';
+import './models/Cp.js';
+import './models/SeccionCotizar.js';
+import './models/TiposPlanes.js';
+import { setupAssociations } from "./models/associations.js";
 
-// Define el puerto a utilizar desde las variables de entorno o por defecto 3001
-const PORT = process.env.PORT || 3001;
+// Configurar las asociaciones
+setupAssociations();
 
-// Inicia el servidor en el puerto especificado
-app.listen(PORT, () => {
-  console.log(`Servidor Activo en el puerto ${PORT}`);
-});
+async function main() {
+  try {
+    // Sincronizar los modelos con la base de datos
+    await sequelize.sync({ force: true });
+    // Iniciar el servidor
+    app.listen(3000, () => {
+      console.log("Servidor en puerto", 3000);
+    });
+  } catch (error) {
+    console.error("Unable to connect to the database:", error);
+  }
+}
+
+main();
