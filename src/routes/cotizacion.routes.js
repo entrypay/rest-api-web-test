@@ -1,15 +1,18 @@
 import { Router } from "express";
-import { getCotizaciones, getOneCotizacion, createCotizacion } from "../controllers/cotizacion.controller.js";
+import {
+  getCotizaciones,
+  getOneCotizacion,
+  createCotizacion,
+  updateCotizacion,
+  deleteCotizacion,
+} from "../controllers/cotizacion.controller.js";
 
 const router = Router();
 
-router.get('/cotizacion', getCotizaciones);
+router.get("/cotizacion", getCotizaciones);
 router.get("/cotizacion/:id", getOneCotizacion);
 router.post("/cotizacion", createCotizacion);
-router.put("/cotizacion/:id");
-router.delete("/cotizacion?:id");
+router.put("/cotizacion/:id", updateCotizacion);
+router.delete("/cotizacion/:id", deleteCotizacion);
 
-
-
-
-export default router
+export default router;

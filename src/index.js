@@ -1,9 +1,9 @@
 import app from "./app.js";
 import { sequelize } from "./database/database.js";
-import './models/Clients.js';
-import './models/Cp.js';
-import './models/SeccionCotizar.js';
-import './models/TiposPlanes.js';
+import "./models/Clients.js";
+import "./models/Cp.js";
+import "./models/SeccionCotizar.js";
+import "./models/TiposPlanes.js";
 import { setupAssociations } from "./models/associations.js";
 
 // Configurar las asociaciones

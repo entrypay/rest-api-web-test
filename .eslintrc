@@ -1,0 +1,33 @@
+{
+  "extends": ["next/core-web-vitals", "plugin:prettier/recommended", "plugin:react/recommended"],
+  "plugins": ["prettier", "react", "react-hooks"],
+  "rules": {
+    "linebreak-style": ["error", "unix"],
+    "no-unused-vars": [
+      "error",
+      {
+        "args": "after-used",
+        "ignoreRestSiblings": true,
+        "vars": "all"
+      }
+    ],
+    "prettier/prettier": "error",
+    // Custom rules
+    "react/jsx-no-bind": "warn",
+    "react/jsx-sort-props": [
+      "warn",
+      {
+        "callbacksLast": false,
+        "ignoreCase": true,
+        "noSortAlphabetically": false,
+        "shorthandFirst": false,
+        "shorthandLast": false
+      }
+    ],
+    "react/prop-types": "off",
+    "react/react-in-jsx-scope": "off",
+    "react-hooks/exhaustive-deps": "error",
+    "react-hooks/rules-of-hooks": "error",
+    "sort-keys": "warn"
+  }
+}
