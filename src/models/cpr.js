@@ -1,16 +1,21 @@
 import { DataTypes } from "sequelize";
 import { sequelize } from "../database/database.js";
 
-export const TiposDePlanes = sequelize.define(
-  "tipos_de_planes",
+export const CPR = sequelize.define(
+  "cpr",
   {
-    id_plan: {
+    id_propuesta: {
       type: DataTypes.INTEGER,
       primaryKey: true,
-      autoIncrement: true,
     },
-    nombre_plan: {
+    id_prospecto: {
+      type: DataTypes.INTEGER,
+    },
+    fifa: {
       type: DataTypes.STRING(255),
+    },
+    id_admin_entry: {
+      type: DataTypes.INTEGER,
     },
   },
   {
